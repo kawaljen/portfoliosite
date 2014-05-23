@@ -99,7 +99,10 @@ function easyFader($container, fadeDur, numslide){
 
 };
 	
-
+function reseteasyFaderCSS(){
+	$('.slide').removeAttr('style');
+	
+	};
 
 //DECLENCHEURS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
 $(".bord_img").click(function () { 
@@ -109,7 +112,8 @@ $(".bord_img").click(function () {
 	});
 
 $("#fondtransparent").click(function () { 
-		$.fermer();			
+		$.fermer();	
+		reseteasyFaderCSS();		
 	});	
 	
 
