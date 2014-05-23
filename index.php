@@ -29,13 +29,12 @@ if($http_lang !== 'en' && $_GET['lg']!=='en')
 
 if(!detection_mobile ())
 	{
-      echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>';
+          echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>';
 	  echo ' <script>window.jQuery || document.write(\'<script src="js/jquery-1.7.2.min.js">\')</script>';
 	  //echo '<script src="js/competence.js"></script>';
 	  }
-	
-echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 ?>
+	<link rel="stylesheet" type="text/css" href="css/style22.css" />
 	 
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	 
@@ -321,9 +320,11 @@ echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 <div>
 <a href="mentionsleg.php">Mentions légales</a>
 </div>
-<script src="js/formulaire.js" async></script>	
-<script src="js/diaporama2.js" async> </script>	
-
+<script src="js/formulaire.js" async></script>
+<?php 
+if(!detection_mobile ())
+             echo '<script src="js/diaporama2.js" async> </script>';	
+?>
 </body>
 </html>
 
