@@ -1,0 +1,138 @@
+html, body {  margin : 0;
+            padding : 0;
+			width : 100%;
+			height : 100%;
+            font-size : 1.05em;
+            font-family : courier;	
+			color : #3d0707;
+			background-color:#faf9ea;
+			 }
+			 
+			
+	 
+
+a:link {color: #3d0707 ; 
+       text-decoration: none;
+	   /* Fonctionne déjà sur webkit */
+		    -webkit-transition-property: color;
+				-webkit-transition-duration: 2s;
+				
+				/* Bientôt supporté par Firefox */
+        -moz-transition-property: color;
+				-moz-transition-duration: 2s;
+				
+				/* et lorsque ce sera standardisé */
+				transition-property: color;
+				transition-duration: 1s;}
+				
+a:visited {color: #3d0707; }
+a:hover {color : #000000; }
+a:active {color : #ffffff;}
+
+a img{
+border: none; 
+} 				
+				
+ul { list-style-type:none;
+        margin :  0; 
+		padding : 0;
+	
+	   }
+.clr{clear:both;}
+.disp_none{visibility: hidden;}
+.vrainone{display:none;}
+.float{float:left;}
+.zero{left:0px;}
+.un{left:0px;}
+.deux{left:0px;}
+.trois{left:0px;}
+/*******************************************
+GENERAL
+***********************************************/
+h2 { font-size : 6.5em;
+    font-family : arial;
+    margin : 10px 55px;}
+
+section {clear : both;}
+h1 { font-family : arial;
+     font-size : 8em;
+	margin:40px 55px 0px 0px;;
+	 }
+
+#cadre {float:right;}
+#cadrecktt{float : left;}
+#cadre #gpetextprime { margin : 0; float:right; background:url(../zimages/fondaccueil.png) left top no-repeat;padding:20px 0px 20px 180px; width:800px;height:561px; display:block;}
+#cadrecktt #gpetextdeuz {margin : 0; float:right; background:url(../zimages/fondcontact.png) left top no-repeat;padding:20px 70px 20px 180px; width:800px;height:561px; display:block;}
+#cadre #bande {background:#f2efc6; height:418px; display:block; margin-top:25px;position:fixed;left:0; width :100%;overflow:hidden;}
+/*#cadre #gpetext p {clear:both;}*/
+#cadre #bande #gpetext{margin-left:300px;}
+/*#fenetre {width:600px;}*/
+#cadre h1 {font-size:100px; letter-spacing:-3px;}
+		
+
+/*************************************************************
+* MENU
+**************************************************************/
+	  
+#nav { clear : both;
+    margin : 20px 	
+}
+
+#nav ul { list-style-type:none;
+        margin :  0; 
+		padding : 0;
+	
+	   }
+		
+#nav li {float : left;
+	 margin :  0 30px 0 0;
+	 padding-right : 15px; 
+	 font-weight:600;
+	 }
+
+#actif a{ color: #AA0044;
+        }
+		
+		
+/**************************************
+STYLE PORTO
+*********************************/
+#liste {float:left; width:90px; display:block; margin:0; font-size:10px;}
+
+.topo { font-size : 0.9em;
+		width : 250px;
+		margin :0px;
+		display : block;
+		clear:both;
+		float:left;
+	  }
+.travail img {float:left;width:400px;}
+
+#travaux {clear:both; width:2800px;display:block;height:418px;margin-left:300px;position:fixed; left:100px;}
+.travail{width:650px; float:left;margin:0 20px;}
+/************************************
+STYLE PROPOS
+**********************************/
+#ensemble { margin : 55px; background-color:#fff; border-radius:5px; padding:10px 0; width:400px;}
+.bloccv li {width:400px;}
+.etgche {float:right;}
+
+h4{ font-size : 2.5em;
+    font-family : arial;
+	margin:10px 0;}
+  
+ /************************************************
+ STYLE CONTACT
+ **************************************************/
+ #content { width : 800px;
+          margin : 100px 90px;
+		  clear : both;}
+			
+		   
+#mains { float : right;
+        margin : 0 150px 0 0;}
+
+
+#mtlg  {clear:both; margin:150px 50px;}		
+#mtlg  a{ text-decoration: underline;}
+#mtlg a:hover {color:pink;}
