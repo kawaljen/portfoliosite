@@ -1,9 +1,10 @@
 $(document).ready(function(){
 //**********************************************************************
 //---------------------------DIAPORAMA----------------------------------
-//**********************************************************************	
-	var diaporama = document.getElementById('Fader'),
-	    conteneur = document.getElementById('porto');
+
+//STYLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
+var diaporama = document.getElementById('Fader'),
+	conteneur = document.getElementById('porto');
 	
 //recuperer le scroll top compatible avec tout navigateur
 function getScrollXY() {
@@ -37,8 +38,8 @@ function windowCenter() {
 	diaporama.style.left=margeGche+'px';
 	diaporama.style.top=posY+"px";
 }
-
-
+		
+//STYLE HEADQUARTER+++++++++++++++++++++++++++++++++++++++++++++++++++++
 $.ouvrir=function () { 
 		$("#fondtransparent").addClass('diapactif');
 		$("#porto").addClass('portodiap');
@@ -49,41 +50,23 @@ $.fermer=function(){
 		$("#fondtransparent").removeClass('diapactif');
 		$("#porto").removeClass('portodiap');
 		$("#Fader").addClass('dispnone');
-		}		
+		}
 		
-
-
-//DECLENCHEURS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
-$(".bord_img").click(function () { 
-		$.ouvrir();
-	});
-
-$("#fondtransparent").click(function () { 
-		$.fermer();			
-	});	
 	
-	
-	
-//SLIDER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
-function easyFader($container, slideDur, fadeDur){
+//SLIDER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
+function easyFader($container, fadeDur, numslide){
 
-    $container[0].faderConfig = {};
     var slideSelector = '.slide',
-        slideTimer,
-        activeSlide,
-        newSlide,
+        activeSlide= numslide-1,
+        newSlide =numslide,
         $slides = $container.find(slideSelector),
-        totalSlides = $slides.length,
-        config = $container[0].faderConfig;
-    config = {
-        slideDur : slideDur,
-        fadeDur : fadeDur   
-    };  
-    $slides.eq(0).css('opacity', 1);
-    activeSlide = 0;
+        totalSlides = $slides.length,       
+        fadeDur = fadeDur; 
+    
+    $slides.eq(numslide).css('opacity', 1);
+    activeSlide = numslide;
     $container.find('.page').bind('click',function(){
         var target = $(this).attr('data-target');
-        clearTimeout(slideTimer);
         changeSlides(target);
     });
     function changeSlides(target){
@@ -108,22 +91,27 @@ function easyFader($container, slideDur, fadeDur){
             'z-index': 2,
             'opacity': 1
         });
-        $slides.eq(activeNdx).animate({'opacity': 0}, config.fadeDur, function(){
+        $slides.eq(activeNdx).animate({'opacity': 0}, fadeDur, function(){
             $slides.eq(activeNdx).removeAttr('style');
             activeSlide = newNdx;
-            waitForNext();
         });
     };
-    function waitForNext(){
-        slideTimer = setTimeout(function(){
-            changeSlides('next');   
-        },config.slideDur);
-    };
-};
 
-$(function(){
-   easyFader($('#Fader'),5000,800);
-});
+};
+	
+
+
+//DECLENCHEURS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
+$(".bord_img").click(function () { 
+		$.ouvrir();
+		var numslide = $(this).parent().index();
+		easyFader($('#Fader'),800, numslide);
+	});
+
+$("#fondtransparent").click(function () { 
+		$.fermer();			
+	});	
+	
 
 		
 });
