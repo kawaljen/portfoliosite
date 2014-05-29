@@ -35,42 +35,90 @@ function detection_mobile ()
 /*******************************************************MAIL
 /*******************************************************************************************************************************/
 function envoimail($post){
-	$reponse=array();
 	
-	// To
-	$to = 'declicsweb@gmail.com';
-	$copie = $post['email'];
+	if (strlen($post['email'])>6 && strlen($post['nom'])>5 && strlen($post['message'])>6) {
+		if(checkemail($post['email'])){
+			$reponse=array();
+			
+			// To
+			$to = 'declicsweb@gmail.com';
+			$copie = $post['email'];
 
-	// Subject
-	$subject = 'Demande d\'informations webdesign Alexandra Persilié';
-	 
-	// Headers
-	$headers = 'From: Alexandra Persilié Webdesign'."\r\n";
-	$headers .= 'Reply-To: declicsweb@gmail.com'."\r\n";
-	$headers .= 'Mime-Version: 1.0'."\r\n";
-	$headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
-	$headers .= "\r\n";
-	 
-	// Message
-	$msg = '<p>Madame, Monsieur, <br/>Merci de l\'attention portée. Je vous répondrez dans les plus brefs délais</p>';
-	$msg .= '<p>Alexandra Persilié, Déclics Webdesign.</p>';
-	$msg .= '<h3 style="color:#A02C2C; padding-left:20px;">Votre message</h3> ';
-	if(!empty($post['sujet'])) $msg .= '<h2 style="color:#808080; padding-left:20px;">Sujet :'.$post['sujet'].'</h2> ';
-	$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['message'].'</p>';
-	$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['nom'].'</p>';
-	$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['email'].'</p>';
-	 
-	// Function mail()
-	if(mail($to, $subject, $msg, $headers))
-			$reponse[]=true;
-	if(mail($copie, $subject, $msg, $headers))
-			$reponse[]=true;
-	
-	return $reponse;
-
-	
+			// Subject
+			$subject = 'Demande d\'informations webdesign Alexandra Persilié';
+			 
+			// Headers
+			$headers = 'From: Alexandra Persilié Webdesign'."\r\n";
+			$headers .= 'Reply-To: declicsweb@gmail.com'."\r\n";
+			$headers .= 'Mime-Version: 1.0'."\r\n";
+			$headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
+			$headers .= "\r\n";
+			 
+			// Message
+			if ($post['lg'] = 'fr'){
+				// Subject
+				$subject = 'Demande d\'informations webdesign Alexandra Persilié';
+				$msg = '<p>Madame, Monsieur, <br/>Merci de l\'attention portée. Je vous répondrez dans les plus brefs délais</p>';
+				$msg .= '<p>Alexandra Persilié, Déclics Webdesign.</p>';
+				$msg .= '<h3 style="color:#A02C2C; padding-left:20px;">Votre message</h3> ';
+				if(!empty($post['sujet'])) $msg .= '<h2 style="color:#808080; padding-left:20px;">Sujet :'.$post['sujet'].'</h2> ';
+				$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['message'].'</p>';
+				$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['nom'].'</p>';
+				$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['email'].'</p>';
+			} else {
+				// Subject
+				$subject = 'Informations webdesign Alexandra Persilié';
+				$msg = '<p>Dear Sir or Madam, <br/>Thank you for your time, I will answer you as soon as possible</p>';
+				$msg .= '<p>Alexandra Persilié, Déclics Webdesign.</p>';
+				$msg .= '<h3 style="color:#A02C2C; padding-left:20px;">Your message</h3> ';
+				if(!empty($post['sujet'])) $msg .= '<h2 style="color:#808080; padding-left:20px;">Sujet :'.$post['subject'].'</h2> ';
+				$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['message'].'</p>';
+				$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['name'].'</p>';
+				$msg .= '<p style="color:#808080; padding-left:20px;">'.$post['email'].'</p>';				
+			}
+			 
+			// Function mail()
+			if(mail($to, $subject, $msg, $headers))
+					$reponse[]=true;
+			if(mail($copie, $subject, $msg, $headers))
+					$reponse[]=true;
+		
+		
+		} else {
+			$reponse= array( false, false);}
+		
+	} else {
+			$reponse= array( false, false);		
 	}
-	
+			
+	return $reponse;
+	}
+
+function checkemail($adresse)
+{
+
+  if(strlen($adresse)>254){
+    return false;
+  }
+
+  $nonASCII='ďđēĕėęěĝğġģĥħĩīĭįıĵķĺļľŀłńņňŉŋōŏőoeŕŗřśŝsťŧ';
+  $nonASCII.='ďđēĕėęěĝğġģĥħĩīĭįıĵķĺļľŀłńņňŉŋōŏőoeŕŗřśŝsťŧ';
+  $nonASCII.='ũūŭůűųŵŷźżztșțΐάέήίΰαβγδεζηθικλμνξοπρςστυφ';
+  $nonASCII.='χψωϊϋόύώабвгдежзийклмнопрстуфхцчшщъыьэюяt';
+  $nonASCII.='ἀἁἂἃἄἅἆἇἐἑἒἓἔἕἠἡἢἣἤἥἦἧἰἱἲἳἴἵἶἷὀὁὂὃὄὅὐὑὒὓὔ';
+  $nonASCII.='ὕὖὗὠὡὢὣὤὥὦὧὰάὲέὴήὶίὸόὺύὼώᾀᾁᾂᾃᾄᾅᾆᾇᾐᾑᾒᾓᾔᾕᾖᾗ';
+  $nonASCII.='ᾠᾡᾢᾣᾤᾥᾦᾧᾰᾱᾲᾳᾴᾶᾷῂῃῄῆῇῐῑῒΐῖῗῠῡῢΰῤῥῦῧῲῳῴῶῷ';
+
+  $syntaxe="#^[[:alnum:][:punct:]]{1,64}@[[:alnum:]-.$nonASCII]{2,253}\.[[:alpha:].]{2,6}$#";
+
+  if(preg_match($syntaxe,$adresse)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 /*******************************************************************************************************************************/
 /*******************************************************DETECTION LANGUAGE
 /*******************************************************************************************************************************/

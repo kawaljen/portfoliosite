@@ -1,12 +1,13 @@
 <?php 
 include ('function.php');
-//---------------------------------------------------------MAIL-----------------------------------------------------------------
-if(!empty($_POST))
-	$reponse=envoimail($_POST );
+
 //-------------------------------------------------------LANGAGE----------------------------------------------------------------
 $http_lang = substr(Get_Client_Prefered_Language(),0,2);
 if($http_lang !== 'en' && $_GET['lg']!=='en')
 	header('Location: declics.php');
+//---------------------------------------------------------MAIL-----------------------------------------------------------------
+if(!empty($_POST))
+	$reponse=envoimail($_POST );
 
 ?>
 <!DOCTYPE html> 
@@ -75,7 +76,7 @@ echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 			 <li class="bouton" id="btdx"><a href="#propos">About me</a></li>
 			 <li class="bouton" id="btUn"><a href="#porto">Portfolio</a></li>
 			 <li class="bouton" id="bttrois"><a href="#contact">Contacts</a></li>
-			  <li class="bouton" id="github"><a href="https://github.com/kawaljen" title="github">Github</a></a></li>
+			  <li class="bouton" id="github"><a href="https://github.com/kawaljen" title="github">Github</a></li>
 			 <li id="drap"><a href="index.php?lg=en" title="english version"><img src="images/icones/drap_en.png" alt="EN"/></a><a href="declics.php" title="french version"><img src="images/icones/drap_fr.png" alt="FR"/></a></li>
 		   </ul>	   
 		</div>
@@ -212,7 +213,7 @@ echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 											
 									   </div>
 								</div>
-								<div class="clr"></div>								
+																
 								<div class="travail">
 									<div class="bord_img pointeur"><img src="porto/educ_env.jpg" alt="education environnement 64" class="projet" id="projet1"/></div>
 									  
@@ -228,7 +229,7 @@ echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 											
 									   </div>
 								</div>
-								<div class="clr"></div>
+								
 								<div class="travail">
 									   <div class="bord_img pointeur"><img src="porto/miniat_fd.jpg" alt="atelier folie douce"  class="projet" id="projet2"/></div> 
 									   <div class="topo"> 
@@ -244,7 +245,7 @@ echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 									   </div>
 									  
 								 </div>
-								<div class="clr"></div>  
+								  
 								<div class="travail">
 										<div class="bord_img pointeur"><img src="porto/miniat_fleur.jpg" alt="projet fleuriste"  class="projet" id="projet3"/></div>					 
 										<div class="topo"> 
@@ -280,15 +281,17 @@ echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 						
 						</div>
 						
-						<form method="post" action="http://déclics.eu/index-en.php#contact" id="formulR">
+						<form method="post" action="http://déclics.eu/#contact" id="formulR">
 							<?php 
 							if(!empty($_POST)){
 								if($reponse[1]===true)
-									echo '<div><p>Your email have been send.';
+									echo '<div><p>Your email have been send,';
+								else
+									echo '<div><p>Your email could not have been send. And';
 								if($reponse[2]===true)
 									echo 'A copy has been send to your email account (please check your junk mail just in case!).'; 
 								else 
-									echo ' But your copy couldn\'t go thought, check your email adress.';
+									echo ' your copy couldn\'t go thought, check your email adress.';
 								echo '</p></div>';
 								}
 							?>
@@ -304,6 +307,7 @@ echo '<link rel="stylesheet" type="text/css" href="css/style22.css" />';
 							<div class="formcolonne">
 									<span class="messerreur">This message doesn't seem right...</span>
 								<textarea id="message" name="message"><?php if(!empty($_POST['message'])) echo $_POST['message']; else echo 'Message';?></textarea>
+								<input type="hidden" name="lg" value ="en" />
 								<input type="image" src="images/icones/lettre.png" id="valider" alt="send"/>
 							</div>
 						
