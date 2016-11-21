@@ -1,415 +1,1568 @@
-html, body {  margin : 0; padding : 0; width : 100%;height : 100%; font-size : 1em; font-family : arial;}
-	 
-
-a:link {color: #a02c2c ; 
-       text-decoration: none;
-       font-family:"Ume P Gothic";
+@charset "UTF-8";
+/* line 5, ../sass/sass/style22.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  font-family: arial;
 }
-				
-a:visited {color: #a02c2c; }
-a:hover { color:#808080 }
-a:active {color : #ffffff;}
 
-a img{border: none; } 			
-img	{border: none; } 	
-				
-ul { list-style-type:none; }
-div, ul, img {margin:0; padding:0;}
-.clr{clear:both;}
-.visib_hide{visibility: hidden;}
-.dispnone{display:none;}
-.vrainone{display:none;}
-.float{float:left;}
-.pointeur{cursor: pointer;}
+/* line 8, ../sass/sass/style22.scss */
+a:link {
+  color: #a02c2c;
+  text-decoration: none;
+  font-family: "Ume P Gothic";
+}
+
+/* line 13, ../sass/sass/style22.scss */
+a:visited {
+  color: #a02c2c;
+}
+
+/* line 14, ../sass/sass/style22.scss */
+a:hover {
+  color: #808080;
+}
+
+/* line 15, ../sass/sass/style22.scss */
+a:active {
+  color: #ffffff;
+}
+
+/* line 17, ../sass/sass/style22.scss */
+a img {
+  border: none;
+}
+
+/* line 18, ../sass/sass/style22.scss */
+img {
+  border: none;
+}
+
+/* line 20, ../sass/sass/style22.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 22, ../sass/sass/style22.scss */
+ul {
+  list-style-type: none;
+}
+
+/* line 23, ../sass/sass/style22.scss */
+div, ul, img {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 24, ../sass/sass/style22.scss */
+.clr {
+  clear: both;
+}
+
+/* line 25, ../sass/sass/style22.scss */
+.visib_hide {
+  visibility: hidden;
+}
+
+/* line 26, ../sass/sass/style22.scss */
+.dispnone {
+  display: none;
+}
+
+/* line 27, ../sass/sass/style22.scss */
+.vrainone {
+  display: none;
+}
+
+/* line 28, ../sass/sass/style22.scss */
+.float {
+  float: left;
+}
+
+/* line 29, ../sass/sass/style22.scss */
+.pointeur {
+  cursor: pointer;
+}
 
 @font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
+/* line 42, ../sass/sass/style22.scss */
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* line 56, ../sass/sass/style22.scss */
+.icon-mail:before {
+  content: "\e602";
+}
+
+/* line 57, ../sass/sass/style22.scss */
+.icon-pause:before {
+  content: "\e605";
+}
+
+/* line 58, ../sass/sass/style22.scss */
+.icon-minimise:before {
+  content: "\e606";
+}
+
 /*******************************************
 GENERAL
 ***********************************************/
-h1 { font-family: "Ume P Gothic", Gulim, "DejaVu Sans"; color:#a02c2c; margin:15px 0; font-size:3.5em; text-transform:uppercase;}
-h2 { font-family: "Ume P Gothic", Gulim, "DejaVu Sans"; text-transform:uppercase; color:#453f31; margin:15px auto; text-align: center; }
-h3 {font-family:"Ume P Gothic", Gulim,"DejaVu Sans"; font-size:0.9em; padding:0;  text-align: center; vertical-align:middle; 
-	margin:auto; text-transform:uppercase; color:#808080; width:80%; font-weight:600}
-h4{color:#808080; font-size:1.8em; font-family:"Ume P Gothic", Gulim, "DejaVu Sans"; text-transform:uppercase;}
+/* line 62, ../sass/sass/style22.scss */
+h1 {
+  font-family: "Ume P Gothic", Gulim, "DejaVu Sans";
+  color: #a02c2c;
+  margin: 15px 0;
+  font-size: 3.5em;
+}
 
-#haut{line-height:90px; background: #150b07; float:left; width:100%; background-color:#2a271e; position:fixed;}
-#logo{float:left; position:fixed; top :0; left:3%; padding:0 5px; }
-#cadre {margin-left:0; display:block; width:100%;}
-.page{clear:both;}
-.frise_petite {background:url(../images/ascii_frisepetite.png)repeat-x; height:30px; width:100%; padding:20px 0;}
+/* line 63, ../sass/sass/style22.scss */
+h2 {
+  font-family: "Ume P Gothic", Gulim, "DejaVu Sans";
+  text-transform: uppercase;
+  color: #453f31;
+  margin: 15px auto;
+  text-align: center;
+}
 
-#propos h1, #contact h1 {background-color:#ffffff; display:inline;}
+/* line 64, ../sass/sass/style22.scss */
+h3 {
+  font-family: "Ume P Gothic", Gulim,"DejaVu Sans";
+  font-size: 0.9em;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  text-transform: uppercase;
+  color: #808080;
+  width: 80%;
+  font-weight: 600;
+}
 
-.titre_bloc{background:url(../images/ascii_frise.png) ;height:110px; width:100%; }
-.titre_bloc h1{ padding-top:10px;color:#1c1a14; padding-right:10px; margin: 0; line-height:110px;}
-#ie {border:solid 10px #6c96a0; background-color:#b6cbd8; position:absolute; top:30%; left:25%; width:500px; padding:10px; }
-#iebouton{float:right; background-color:#cedce4; padding:5px 10px; cursor: pointer;}
+/* line 66, ../sass/sass/style22.scss */
+h4 {
+  color: #808080;
+  font-size: 1.8em;
+  font-family: "Ume P Gothic", Gulim, "DejaVu Sans";
+  text-transform: uppercase;
+}
 
-#endev{position:fixed; top:0; left:0;}
+/* line 68, ../sass/sass/style22.scss */
+#haut {
+  line-height: 90px;
+  background: #150b07;
+  float: left;
+  width: 100%;
+  background-color: #2a271e;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
 
-#gpetext{margin-top:15px;}
+/* line 69, ../sass/sass/style22.scss */
+#logo {
+  float: left;
+  position: fixed;
+  top: 0;
+  left: 3%;
+  padding: 0 5px;
+}
 
+/* line 70, ../sass/sass/style22.scss */
+#cadre {
+  margin-left: 0;
+  display: block;
+  width: 100%;
+}
+
+/* line 71, ../sass/sass/style22.scss */
+.page {
+  clear: both;
+}
+
+/* line 72, ../sass/sass/style22.scss */
+.frise_petite {
+  background: url(../images/ascii_frisepetite.png) repeat-x;
+  height: 30px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* line 74, ../sass/sass/style22.scss */
+#propos h1, #contact h1 {
+  background-color: #ffffff;
+  display: inline;
+}
+
+/* line 76, ../sass/sass/style22.scss */
+.titre_bloc {
+  background: url(../images/ascii_frise.png);
+  height: 110px;
+  width: 100%;
+}
+
+/* line 77, ../sass/sass/style22.scss */
+.titre_bloc h1 {
+  padding-top: 10px;
+  color: #1c1a14;
+  padding-right: 10px;
+  margin: 0;
+  line-height: 110px;
+}
+
+/* line 78, ../sass/sass/style22.scss */
+#ie {
+  border: solid 10px #6c96a0;
+  background-color: #b6cbd8;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 500px;
+  padding: 10px;
+}
+
+/* line 79, ../sass/sass/style22.scss */
+#iebouton {
+  float: right;
+  background-color: #cedce4;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* line 81, ../sass/sass/style22.scss */
+#endev {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* line 83, ../sass/sass/style22.scss */
+#gpetext {
+  margin-top: 15px;
+}
 
 /*************************************************************
 * MENU
 **************************************************************/
-#mobnav {display:none;}
-	  
-#nav {float:right; background-color:#2a271e;}
+/* line 89, ../sass/sass/style22.scss */
+#mobnav {
+  display: none;
+}
 
-#nav li:hover{	color:#d8cccc;			  	/* Fonctionne d�j� sur webkit*/
-		    -webkit-transition-property: color;
-				-webkit-transition-duration: 1s;
-				
-				/* Bient�t support� par Firefox */
-        -moz-transition-property: color;
-				-moz-transition-duration: 1s;
-				
-				/* � et lorsque ce sera standardis� */
-				transition-property: color;
-				transition-duration: 1s;}
+/* line 91, ../sass/sass/style22.scss */
+#nav {
+  float: right;
+  background-color: #2a271e;
+}
 
-#nav li { font-family:"Ume P Gothic", Gulim, "DejaVu Sans"; float : left; font-size:1.5em; letter-spacing: -0.08em; margin : 0 0 0 25px; 
-            line-height:90px;cursor: pointer; font-variant: small-caps}
-li.actif {	border-radius:13px 13px 13px 0;
-			  color:#ffffff; }
-#nav li a:hover{border-bottom: solid 2px #808080;}
-#nav li span{font-size:1em; color:#a02c2c;}
-#nav li#github {line-height:100px; padding-top:20px;}
-.rb #nav li#github {padding-top:0px;}
-#nav li#github a {width:40px; height:60px; display:block;background:url(../images/github.png) left top no-repeat;font-size: 14px;font-family: arial; letter-spacing: -0.05em;}
-.rb #nav li#github a {width:60px; height:60px; 
-	-webkit-transform: rotate(-90deg);
+/* line 93, ../sass/sass/style22.scss */
+#nav li:hover {
+  color: #d8cccc;
+  /* Fonctionne d�j� sur webkit*/
+  -webkit-transition-property: color;
+  -webkit-transition-duration: 1s;
+  /* Bient�t support� par Firefox */
+  -moz-transition-property: color;
+  -moz-transition-duration: 1s;
+  /* � et lorsque ce sera standardis� */
+  transition-property: color;
+  transition-duration: 1s;
+}
+
+/* line 105, ../sass/sass/style22.scss */
+#nav li {
+  font-family: "Ume P Gothic", Gulim, "DejaVu Sans";
+  float: left;
+  font-size: 1.5em;
+  letter-spacing: -0.08em;
+  margin: 0 0 0 25px;
+  line-height: 90px;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+
+/* line 107, ../sass/sass/style22.scss */
+li.actif {
+  border-radius: 13px 13px 13px 0;
+  color: #ffffff;
+}
+
+/* line 109, ../sass/sass/style22.scss */
+#nav li a:hover {
+  border-bottom: solid 2px #808080;
+}
+
+/* line 110, ../sass/sass/style22.scss */
+#nav li span {
+  font-size: 1em;
+  color: #a02c2c;
+}
+
+/* line 111, ../sass/sass/style22.scss */
+#nav li#github {
+  line-height: 100px;
+  padding-top: 20px;
+}
+
+/* line 112, ../sass/sass/style22.scss */
+.rb #nav li#github {
+  padding-top: 0px;
+}
+
+/* line 113, ../sass/sass/style22.scss */
+#nav li#github a {
+  width: 40px;
+  height: 60px;
+  display: block;
+  background: url(../images/github.png) left top no-repeat;
+  font-size: 14px;
+  font-family: arial;
+  letter-spacing: -0.05em;
+}
+
+/* line 114, ../sass/sass/style22.scss */
+.rb #nav li#github a {
+  width: 60px;
+  height: 60px;
+  -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);}
-.ie #nav li#github a {}
-#nav li#github a:hover {background:url(../images/github2.png) left top no-repeat; border:none; }
-#nav li#drap{padding:15px 0; display:block;line-height:0;  background: url(../images/bulle.png) center bottom no-repeat; width:70px;}
-#nav li#drap a{ display:block; background-color: transparent; width:40px; margin:0 auto;}
-#nav li#drap a:hover { border:none; opacity:0.9;}
+  transform: rotate(-90deg);
+}
+
+/* line 121, ../sass/sass/style22.scss */
+#nav li#github a:hover {
+  background: url(../images/github2.png) left top no-repeat;
+  border: none;
+}
+
+/* line 122, ../sass/sass/style22.scss */
+#nav li#drap {
+  padding: 15px 0;
+  display: block;
+  line-height: 0;
+  background: url(../images/bulle.png) center bottom no-repeat;
+  width: 70px;
+}
+
+/* line 123, ../sass/sass/style22.scss */
+#nav li#drap a {
+  display: block;
+  background-color: transparent;
+  width: 40px;
+  margin: 0 auto;
+}
+
+/* line 124, ../sass/sass/style22.scss */
+#nav li#drap a:hover {
+  border: none;
+  opacity: 0.9;
+}
+
 /**************************************
 STYLE ACCUEIL
-*********************************/	
-#accueil{padding-top:70px; background: url(../images/poupeerusse.jpg) center bottom no-repeat;width:100%; height:440px; background-size: cover; overflow:hidden; }
-#paratexte { margin: 110px 0 0 5%; float:right; padding:0;}
-#paratexte img {display:block;margin: 0;}
-#paratexte p{  float:left;background:#a02c2c; color:#fff; font-size:1.5em; text-align:center; margin:0 10px 0 8%; display:inline-block; padding:25px 25px;}	
-#paratexte h1{ color:#fff; font-size:5em; background:#a02c2c; display:inline-block;margin:10px 0 25px 5%;padding:5px 25px;}	
-#flechebas {margin:30px auto;width:90px;display:block;}
+*********************************/
+/* line 128, ../sass/sass/style22.scss */
+#accueil {
+  margin-top: 70px;
+  background: url(../images/poupeerusse.jpg) center center no-repeat;
+  width: 100%;
+  height: 440px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* line 129, ../sass/sass/style22.scss */
+#paratexte {
+  margin: 110px 0 0 5%;
+  float: right;
+  padding: 0;
+}
+
+/* line 130, ../sass/sass/style22.scss */
+#paratexte img {
+  display: block;
+  margin: 0;
+}
+
+/* line 131, ../sass/sass/style22.scss */
+#paratexte h1 {
+  display: block;
+  float: left;
+  background: #a02c2c;
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0 10px 0 8%;
+  display: inline-block;
+  padding: 25px 25px;
+}
+
+/* line 132, ../sass/sass/style22.scss */
+#paratexte span {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 5em;
+  background: #a02c2c;
+  display: inline-block;
+  margin: 10px 0 25px 5%;
+  padding: 5px 25px;
+}
+
+/* line 133, ../sass/sass/style22.scss */
+#flechebas {
+  margin: 30px auto;
+  width: 90px;
+  display: block;
+}
 
 /************************************
 STYLE PROPOS
 **********************************/
-#propos{width:100%;}
-#porto_bottom{background:url(../images/porto_bottom.png) top left no-repeat #ffffff; height:60px;margin-left:80%; clear:both;}
-#propos h2 {margin-top:30px;}
-#ensemble { margin :0 auto; border-radius:5px; padding:10px 20px; width:95%;}
-#profil img{width:26% ;float:left; box-shadow: -5px 4px 4px #999999;margin-top:50px;}
-.aprop{width:32%; float:left; margin-top:20px; padding:0 2%}
-#competence{clear:both;margin:50px auto;width:90%;padding:30px 0;}	
-#comptitre {margin:10px auto; text-align:center;}	
-#comptitre h2{ text-align:center; font-size:3em;margin:40px 0; display:inline;}
-#competence span {font-size:1em; line-height:6em; color:#999999; display:inline;padding:0 20px;}
-.competence{float:left; width: 33%; color:#000;text-align:center;}
-.competence p{ margin:10px 20px;}
-.competence .vignette {background:url(../images/ascii_frise.png) #b6161b;border-radius:5px; padding:45px 0;border-right:1px solid #fff; 
-								color:#fff; font-size:80px; display:inline-block;margin:0 auto 1px; width:80%;}
-.icon-paperplane:before {	content: "\e600"; }
-.icon-lab:before {	content: "\e601"; }
-.icon-seo:before {	content: "\e609"; }
-.competence h5{text-transform:uppercase; text-align:center;font-size:1.2em; font-family:"Ume P Gothic", Gulim; margin:0;padding-top:25px;
-					background:url(../images/competence_fleche.png) top center no-repeat #ffffff;}		
-.competence span a{color:#fff; cursor:default;}
+/* line 138, ../sass/sass/style22.scss */
+#propos {
+  width: 100%;
+}
 
-.onglet {float:left; height:200px;}
-.onglet .titre_comp {float:left;	background-color:#eeeeee; height:200px; border-right:3px solid #fff; cursor: pointer; width:40px;
-						word-wrap: break-word;}
-.onglet .actif{background-color:#fff;}
-.onglet .contenu{float:left; width:500px; height:200px; overflow:hidden;}
+/* line 139, ../sass/sass/style22.scss */
+#porto_bottom {
+  background: url(../images/porto_bottom.png) top left no-repeat #ffffff;
+  height: 60px;
+  margin-left: 80%;
+  clear: both;
+}
+
+/* line 140, ../sass/sass/style22.scss */
+#propos h2 {
+  margin-top: 30px;
+}
+
+/* line 141, ../sass/sass/style22.scss */
+#ensemble {
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 95%;
+}
+
+/* line 142, ../sass/sass/style22.scss */
+#profil img {
+  width: 26%;
+  float: left;
+  box-shadow: -5px 4px 4px #999999;
+  margin-top: 50px;
+}
+
+/* line 143, ../sass/sass/style22.scss */
+.aprop {
+  width: 32%;
+  float: left;
+  margin-top: 20px;
+  padding: 0 2%;
+}
+
+/* line 144, ../sass/sass/style22.scss */
+#competence {
+  clear: both;
+  margin: 50px auto;
+  width: 90%;
+  padding: 30px 0;
+}
+
+/* line 145, ../sass/sass/style22.scss */
+#comptitre {
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* line 146, ../sass/sass/style22.scss */
+#comptitre h2 {
+  text-align: center;
+  font-size: 3em;
+  margin: 40px 0;
+  display: inline;
+}
+
+/* line 147, ../sass/sass/style22.scss */
+#competence span {
+  font-size: 1em;
+  line-height: 6em;
+  color: #999999;
+  display: inline;
+  padding: 0 20px;
+}
+
+/* line 148, ../sass/sass/style22.scss */
+.competence {
+  float: left;
+  width: 33%;
+  color: #000;
+  text-align: center;
+}
+
+/* line 149, ../sass/sass/style22.scss */
+.competence p {
+  margin: 10px 20px;
+}
+
+/* line 150, ../sass/sass/style22.scss */
+.competence .vignette {
+  background: url(../images/ascii_frise.png) #b6161b;
+  border-radius: 5px;
+  padding: 45px 0;
+  border-right: 1px solid #fff;
+  color: #fff;
+  font-size: 80px;
+  display: inline-block;
+  margin: 0 auto 1px;
+  width: 80%;
+}
+
+/* line 152, ../sass/sass/style22.scss */
+.icon-paperplane:before {
+  content: "\e604";
+}
+
+/* line 153, ../sass/sass/style22.scss */
+.icon-lab:before {
+  content: "\e602";
+}
+
+/* line 154, ../sass/sass/style22.scss */
+.icon-seo:before {
+  content: "\e601";
+}
+
+/* line 155, ../sass/sass/style22.scss */
+.competence h5 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2em;
+  font-family: "Ume P Gothic", Gulim;
+  margin: 0;
+  padding-top: 25px;
+  background: url(../images/competence_fleche.png) top center no-repeat #ffffff;
+}
+
+/* line 157, ../sass/sass/style22.scss */
+.competence span a {
+  color: #fff;
+  cursor: default;
+}
+
+/* line 159, ../sass/sass/style22.scss */
+.onglet {
+  float: left;
+  height: 200px;
+}
+
+/* line 160, ../sass/sass/style22.scss */
+.onglet .titre_comp {
+  float: left;
+  background-color: #eeeeee;
+  height: 200px;
+  border-right: 3px solid #fff;
+  cursor: pointer;
+  width: 40px;
+  word-wrap: break-word;
+}
+
+/* line 162, ../sass/sass/style22.scss */
+.onglet .actif {
+  background-color: #fff;
+}
+
+/* line 163, ../sass/sass/style22.scss */
+.onglet .contenu {
+  float: left;
+  width: 500px;
+  height: 200px;
+  overflow: hidden;
+}
 
 /**************************************
 STYLE PORTO
 *********************************/
-#oiseaux {background: url(../images/oiseaux.jpg) center bottom no-repeat;width:100%; height:415px; background-size: cover; overflow:hidden;margin-top:30px;}
-#porto_top{background:url(../images/porto_top.png) top left no-repeat #ffffff; width:100%;height:60px;margin-bottom:30px; clear:both;}
-#travaux {display:block; padding-top:50px;padding-left:11%; float:left;}
-#travaux .cadre_ascii{padding-top:15px;}
-
-#travaux h3 {font-family:"Ume P Gothic", Gulim; color:#fff; font-size:2em; text-transform:uppercase; text-align:left; padding:0;margin:0;}
-#travaux h4 { padding:0;margin:0;}
-.travail{ padding:0; margin-top:50px; }
-.travail img{border:3px solid #1c1a14;}
-.ombre{box-shadow: -5px 4px 8px #3f3c31;}
-.topo { font-size : 0.8em; width : 50%; height:220px; display:block;float:left;  padding:10px; color:#808080;margin-left:10px;}
-.topo a {text-align:center; display:inline-block; font-size : 1.1em; color:#ffffff;border-radius:5px;}/* display:block; margin:0 auto;}*/
-.travail .bord_img {float:left; margin:5px 0 0;}
-
-.projet{width:300px;}
-
-#porto{background:url(../images/fondporto.jpg) #453f31; }
-.soixantepixel{height:70px; display:block;}
-.portodiap {position:relative;}
-#porto h1 {background:url(../images/fondporto.jpg) #453f31; display:inline;color:#eeeeee;}
-#porto h1 span {color:#a02c2c; line-height:10px;font-size:1.6em;}
-#frisedroite{background:url(../images/ascii_frisedte.png) bottom repeat-y; float:right; width:31px; height:980px; margin:0;padding:0;}
-
-/*+++---diaporama OLD---+++*/
-.diapactif{width:100%; height:100%;position:absolute; background-color:#000000; opacity:0.7}
-#diaporama{position:absolute;}
-.diapprojet{float:left; }
-.diapprojet img{border:solid 10px #fff;}
-.titrediap{ background-color:#fff; padding:0; width:100%; font-family: "Ume P Gothic", Gulim,"DejaVu Sans";}
-.titrediap p {padding:25px 0; text-align:center; color:#808080; font-size:1em; margin:10px 0; text-transform:uppercase;}
-.titrediap p span{color:#808080; font-weight:bold;}
-.diapfleche{width:60px; margin:220px 0 0; padding:10px; cursor: pointer; position:absolute; top:20px}
-#diaporama span.detail{font-weight:normal; font-size:0.9em;}
-/*+++---diaporama NEW---+++*/
-
-		.fader{
-			position: absolute;
-			overflow: hidden; 
-			background-color:#fff;
-			height:auto;  
-		    position:absolute;
-		    margin-top: 10px;
-		    padding:20px;
-		    border:solid 4px #808080;
-		} 
-
-		.fader h3 {
-		  font-size:1.9em; 
-		  margin:10px auto;  
-		  color:#808080;
-		  text-align: left;
-		  width:100%; 
-		}
-		.fader h4{
-		  font-size:1.8em; 
-		  margin:10px auto;
-		}
-
-		.fader .slide{
-			position: absolute;
-			width: 100%;
-			height: auto;
-			top: 30px;
-			z-index: 1;
-			opacity: 0;
-			background: white;
-		}
-		 
-		.fader .topo{ 
-			float:left;
-			font-size : 1em; 
-			line-height:1.5em;
-			width : 25%; 
-			display:block;
-			padding:30px 10px; 
-			color:#808080;
-			margin-left:10px;}
-		.fader .topo a {  
-			text-align:center; 
-			display:inline-block; 
-			font-size : 1.1em; 
-			color: #fff;
-			background: url('../images/ascii_frise.png')#B6161B;
-			word-wrap:break-word;
-		}
-
-		.fader img {
-			float:left;
-			width:70%;
-		}
-		.fader img.slide{
-			height: auto;
-		}
-		.fader .prev, .fader .next{
-		  position: absolute;
-		  line-height: 55px;
-		  font-size: 30px;
-		  text-align: center;
-		  color: #000;
-		  top: 73%;
-		  left: 0;
-		  z-index: 4;
-		  margin-top: -25px;
-		  cursor: pointer;
-		  opacity: .7;
-		  transition: all 150ms;
-		}
-
-		.fader .prev:hover,
-		.fader .next:hover{
-		  opacity: 1;
-		}
-
-		.fader .next{
-		  left: auto;
-		  right: 0;
-		}
-
-
-
- /************************************************
- STYLE CONTACT
- **************************************************/
-#contact{padding:100px 0;}
-
-#coord{width :100%; margin: 60px auto;}
-#coord #infocontact img {padding:0 5px;}
-#coord #infocontact a {padding-bottom: 5px;}
-#contact form {color:#808080; margin:20px auto; width:90%; max-width:900px;}
-#contact form input, #contact form #message {font-size:1.1em;color:#808080; font-family:"Ume P Gothic", Gulim,"DejaVu Sans";margin-bottom:10px; padding:20px 0px; background-color:#eeeeee; border:none; border-radius:3px; width:100%;}
- #contact form #message {height:125px;}
- #contact form div p {font-style:italic; color:#000; font-size:0.9em;}
-#contact form span.messerreur {visibility:hidden; color:#808080; font-style:italic; font-size: 0.8em; display:block;}
-#contact form label {padding-left:10px; font-size:0.9em;}
-#contact #valider {background:url(../images/ascii_frise.png) #b6161b;color:#eeeeee; line-height:30px;  padding:10px 60px; width:57px;}
-#contact .formcolonne {float:left; width:45%;}
-#contact #premiere {margin-right:5%;}
-.icon-mail:before {	content: "\e602"; }
-
-footer{background:url(../images/fond_menu.png) #150b07; padding:25px;}
-footer a {display:inline; text-align:center;}
-
-
-@media (max-width: 640px) {
-	h1 {  font-size:2em; margin:0;}
-	h2 { font-size:1em; margin:0 auto;line-height: 1.2em;}
-	h3 {font-size:0.7em;  margin: 0 auto; padding:0; line-height: 1.4em;}
-	h4{ font-size:1.8em; }
-	p {line-height: 1.3em;}
-	img {max-width:350px; margin:0 auto; display:block;}
-	
-	.titre_bloc{height:auto; padding:10px 0;}
-	.titre_bloc h1{ line-height:1em;}
-
-	/**STYLE ACCUEIL*/	
-	#accueil{height:200px; padding-top:0px; width:100%;position:relative; overflow:visible;}
-	#paratexte { margin: 0; padding:0;}
-	#paratexte img {display:none;}
-	#paratexte p{  font-size:1.2em; margin:60px auto 0; padding:5px 10px; position: absolute; bottom: -20px; left: 0;}	
-	#paratexte h1{ display:none;}	
-	#paratexte #guillemet{float:right; margin-top:10px;}
-	#haut	{position:relative; line-height:1.8em;}
-	#flechebas {    margin: 0; display: block;  visibility: hidden;}
-
-	/** MENU*/
-	#mobnav {position:relative;display:block; margin: 15px 3% 15px 20px; width:40px; height:40px; background:url(../images/mobnav.png) no-repeat transparent; float:left;}
-	#logo{position:relative; float:left; line-height: 1.8em; padding:0 ;left:auto;}
-	#nav {float:none; padding-left:3%; display:none; clear:both; position:absolute; top:70px; z-index: 99;}
-	#nav li a:hover{	color:#d8cccc;}
-	#nav li a{ padding:5px 30px 5px 10px; color:#fff;}
-	#nav li { float : none; margin:0; font-size:1.2em;line-height:1.8em; letter-spacing: 0;}
-	#nav li#drap{display:none;}
-	#nav li#drap a{ display:none;}
-
-	/**STYLE PROPOS**/
-	#propos{width:100%; overflow:hidden; font-size:0.8em; padding-top:0px;}
-	#propos h2 {margin-top:30px;}
-	#propos h3 { width:80%;}
-	#ensemble { margin :0 auto; width:95%; padding:10px 0px; width:95%;}
-	#competence{clear:both;margin:0px auto;width:90%;padding:30px 0;}	
-	#comptitre {margin:0 auto; display:inline-block;}
-	#comptitre span{display:inline-block; width:100%;}
-	#competence h2{  font-size:2em;margin:40px 0; }
-	#competence span {width:100%; font-size:1em; line-height:6em;  display:inline-block;}
-	.competence{float:none; width: 100%; }
-	.competence p{margin:10px auto;}
-	.competence img{ padding:25px 95px;}
-	.competence h5{font-size:1.2em; margin:0;}		
-	.competence .vignette { padding:20px 0px; font-size:80px; width:80%;}
-
-	#propos h1, #contact h1 {display:inline;line-height:2em; text-align:center;}
-
-	#porto_bottom{ height:auto;margin-left:0; }
-
-	#profil img{width:100% ;float:none; box-shadow: -5px 4px 4px #999999;margin-top:0px;}
-	.aprop{width:100%; float:none; margin-top:0px;}
-
-
-	.onglet {float:left; height:200px;}
-	.onglet .titre_comp {float:left;	background-color:#eeeeee; height:200px; border-right:3px solid #fff; cursor: pointer; width:40px;
-							word-wrap: break-word;}
-	.onglet .actif{background-color:#fff;}
-	.onglet .contenu{float:left; width:500px; height:200px; overflow:hidden;}
-	/**STYLE PORTO**/
-	#oiseaux {margin-top:30px;}
-	#travaux {display:block; padding:50px 0 0;}
-	#travaux .cadre_ascii{padding-top:15px;}
-
-	#travaux h3 { font-size:2em;   padding:0;margin:0;}
-	#travaux h4 { padding:0;margin:0;}
-	.travail{ padding:0; }
-	.travail img{; width:95%; margin:0 auto;}
-	.topo { font-size : 0.8em; padding:10px 5%; margin-left:10px; height:auto; width:70%;}
-	.topo a {text-align:center; display:inline-block; font-size : 1.1em;}/* display:block; margin:0 auto;}*/
-	.travail .bord_img { margin:5px 0 0; width:95%; margin:0 auto;}
-
-	#porto{padding-top:70px;}
-	#porto h1 { display:inline; line-height:100px;padding-top:10px;}
-
-
-	 /**STYLE CONTACT*/
-	#contact{padding:70px 0;}
-
-	#coord{ margin: 60px auto;}
-	#coord #infocontact img {padding:0 5px;}
-	#coord #infocontact a {padding-bottom: 5px;}
-	#contact form { margin:20px auto; width:90%;}
-	#contact .formcolonne {width:100%;}
-	#contact #premiere {    height: auto;}
-	#contact form input, #contact form #message {width:100%;font-size:1.1em; margin:5px auto; padding:20px 0px;}
-	#contact form div p { font-size:0.9em;}
-	#contact form span.messerreur { font-size: 0.8em; }
-	#contact form label {padding-left:10px; font-size:0.9em;}
-	#contact #valider { padding:10px 50px; width:50px; margin:10px auto; display:block;}
-
+/* line 168, ../sass/sass/style22.scss */
+#oiseaux {
+  background: url(../images/oiseaux.jpg) center bottom no-repeat;
+  width: 100%;
+  height: 415px;
+  background-size: cover;
+  overflow: hidden;
+  margin-top: 30px;
 }
 
-@media  (min-width:640px) and (max-width:740px) {
-	#logo{position:relative; float:left; line-height: 0; width:200px}
-	#nav li {margin: 0px 0px 0px 15px;}
-	#nav li#drap {    padding: 15px 0px;    display: block;    line-height: 0;    width: 40px;}
-	#comptitre span{display:inline-block; width:100%;}
-	#competence h2{  font-size:2em;margin:40px 0; }
-	 /**STYLE CONTACT*/
-	#contact{padding:70px 0;}
+/* line 169, ../sass/sass/style22.scss */
+#porto_top {
+  background: url(../images/porto_top.png) top left no-repeat #ffffff;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 30px;
+  clear: both;
+}
 
-	#coord{ margin: 60px auto;}
-	#coord #infocontact img {padding:0 5px;}
-	#coord #infocontact a {padding-bottom: 5px;}
-	#contact form { margin:20px auto; width:90%;}
-	#contact .formcolonne {width:100%;}
-	#contact #premiere {    height: auto;}
-	#contact form input, #contact form #message {width:100%;font-size:1.1em; margin:5px auto; padding:20px 0px;}
-	#contact form div p { font-size:0.9em;}
-	#contact form span.messerreur { font-size: 0.8em; }
-	#contact form label {padding-left:10px; font-size:0.9em;}
-	#contact #valider { padding:10px 50px; width:50px; margin:10px auto; display:block;}
+/* line 171, ../sass/sass/style22.scss */
+#travaux .cadre_ascii {
+  padding-top: 15px;
+}
+
+/* line 173, ../sass/sass/style22.scss */
+#travaux h3 {
+  font-family: "Ume P Gothic", Gulim;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 174, ../sass/sass/style22.scss */
+#travaux h4 {
+  padding: 10px 0;
+  margin: 0;
+}
+
+/* line 175, ../sass/sass/style22.scss */
+.travail {
+  padding: 0;
+  margin-top: 50px;
+}
+
+/* line 176, ../sass/sass/style22.scss */
+.travail img {
+  border: 3px solid #1c1a14;
+}
+
+/* line 177, ../sass/sass/style22.scss */
+.ombre {
+  box-shadow: -5px 4px 8px #3f3c31;
+}
+
+/* line 178, ../sass/sass/style22.scss */
+.travail .bord_img {
+  float: left;
+  margin: 5px 0 0;
+  position: relative;
+}
+
+/* line 180, ../sass/sass/style22.scss */
+.projet {
+  width: 300px;
+}
+
+/* line 182, ../sass/sass/style22.scss */
+#porto {
+  background: url(../images/fondporto.jpg) #453f31;
+}
+
+/* line 183, ../sass/sass/style22.scss */
+.soixantepixel {
+  height: 70px;
+  display: block;
+}
+
+/* line 184, ../sass/sass/style22.scss */
+.portodiap {
+  position: relative;
+}
+
+/* line 185, ../sass/sass/style22.scss */
+#porto h1 {
+  background: url(../images/fondporto.jpg) #453f31;
+  display: inline;
+  color: #eeeeee;
+}
+
+/* line 186, ../sass/sass/style22.scss */
+#porto h1 span {
+  color: #a02c2c;
+  line-height: 10px;
+  font-size: 1.6em;
+}
+
+/* line 187, ../sass/sass/style22.scss */
+#frisedroite {
+  background: url(../images/ascii_frisedte.png) bottom repeat-y;
+  float: right;
+  width: 31px;
+  height: 980px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 189, ../sass/sass/style22.scss */
+.open-slider {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background: url(../images/ascii_frise.png) #b6161b;
+  color: white;
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 50px;
+  opacity: 0.7;
+  font-size: 30px;
+}
+
+/* line 191, ../sass/sass/style22.scss */
+.icon-slider:before {
+  content: "\e603";
+}
+
+/*+++---diaporama NEW---+++*/
+/* line 196, ../sass/sass/style22.scss */
+.wrap__slider {
+  position: relative;
+  width: 95%;
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+/* line 203, ../sass/sass/style22.scss */
+.wrap__slider .hide-control {
+  display: none;
+}
+/* line 206, ../sass/sass/style22.scss */
+.wrap__slider .navigation__list {
+  color: #fff;
+  float: right;
+  background: rgba(160, 44, 44, 0.7);
+  padding: 11px 0;
+}
+/* line 211, ../sass/sass/style22.scss */
+.wrap__slider .navigation__list li {
+  float: left;
+  display: inline-block;
+}
+/* line 214, ../sass/sass/style22.scss */
+.wrap__slider .navigation__list li:before {
+  content: 'x';
+  cursor: pointer;
+  padding: 10px;
+  opacity: 0.6;
+}
+/* line 220, ../sass/sass/style22.scss */
+.wrap__slider .navigation__list li:after {
+  content: '..';
+}
+/* line 224, ../sass/sass/style22.scss */
+.wrap__slider .navigation__list li.is__active:before {
+  opacity: 1;
+}
+/* line 230, ../sass/sass/style22.scss */
+.wrap__slider .topo-menu {
+  background: #a02c2c;
+  color: #fff;
+  display: inline-block;
+  float: right;
+}
+/* line 235, ../sass/sass/style22.scss */
+.wrap__slider .topo-menu span {
+  padding: 20px;
+  line-height: 40px;
+  cursor: pointer;
+}
+/* line 242, ../sass/sass/style22.scss */
+.wrap__slider .slider {
+  position: relative;
+  transition: all 0.5s;
+  display: table;
+  table-layout: fixed;
+  background: #fff;
+  overflow: hidden;
+}
+/* line 250, ../sass/sass/style22.scss */
+.wrap__slider .slider .slide {
+  position: relative;
+  height: auto;
+  z-index: 1;
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 258, ../sass/sass/style22.scss */
+.wrap__slider .slider .topo {
+  float: right;
+  font-size: 1em;
+  padding: 10px 20px;
+  color: #808080;
+  width: 30%;
+  background-color: #fff;
+  z-index: 10;
+  border-right: solid 0px #a02c2c;
+}
+/* line 267, ../sass/sass/style22.scss */
+.wrap__slider .slider .topo a {
+  text-align: center;
+  display: inline-block;
+  font-size: 1.1em;
+  color: #fff;
+  background: url("../images/ascii_frise.png") #B6161B;
+  word-break: break-all;
+  margin: 20px 0;
+  padding: 5px 10px;
+}
+/* line 277, ../sass/sass/style22.scss */
+.wrap__slider .slider .topo ul {
+  line-height: 1.5em;
+}
+/* line 282, ../sass/sass/style22.scss */
+.wrap__slider .slider .item {
+  background: #fff;
+  overflow: hidden;
+}
+/* line 286, ../sass/sass/style22.scss */
+.wrap__slider .slider .item img {
+  width: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 295, ../sass/sass/style22.scss */
+.wrap__slider .nav-button {
+  position: absolute;
+  line-height: 55px;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  left: 0;
+  z-index: 4;
+  cursor: pointer;
+  opacity: .7;
+  transition: all 150ms;
+  display: none;
+  background: rgba(160, 44, 44, 0.7);
+}
+/* line 309, ../sass/sass/style22.scss */
+.wrap__slider .nav-button img {
+  width: 70%;
+}
+/* line 312, ../sass/sass/style22.scss */
+.wrap__slider .nav-button:hover {
+  opacity: 1;
+}
+/* line 315, ../sass/sass/style22.scss */
+.wrap__slider .nav-button.show-button {
+  display: block;
+}
+/* line 318, ../sass/sass/style22.scss */
+.wrap__slider .nav-button.slider--next {
+  left: auto;
+  right: 0;
+}
+
+/************************************************
+STYLE CONTACT
+**************************************************/
+/* line 332, ../sass/sass/style22.scss */
+#contact {
+  padding: 100px 0;
+}
+
+/* line 334, ../sass/sass/style22.scss */
+#coord {
+  width: 100%;
+  margin: 60px auto;
+}
+
+/* line 335, ../sass/sass/style22.scss */
+#coord #infocontact img {
+  padding: 0 5px;
+}
+
+/* line 336, ../sass/sass/style22.scss */
+#coord #infocontact a {
+  padding-bottom: 5px;
+}
+
+/* line 337, ../sass/sass/style22.scss */
+#contact form {
+  color: #808080;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* line 338, ../sass/sass/style22.scss */
+#contact form input, #contact form #message {
+  font-size: 1.1em;
+  color: #808080;
+  font-family: "Ume P Gothic", Gulim,"DejaVu Sans";
+  margin-bottom: 10px;
+  padding: 20px 0px;
+  background-color: #eeeeee;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+}
+
+/* line 339, ../sass/sass/style22.scss */
+#contact form #message {
+  height: 125px;
+}
+
+/* line 340, ../sass/sass/style22.scss */
+#contact form div p {
+  font-style: italic;
+  color: #000;
+  font-size: 0.9em;
+}
+
+/* line 341, ../sass/sass/style22.scss */
+#contact form span.messerreur {
+  visibility: hidden;
+  color: #808080;
+  font-style: italic;
+  font-size: 0.8em;
+  display: block;
+}
+
+/* line 342, ../sass/sass/style22.scss */
+#contact form label {
+  padding-left: 10px;
+  font-size: 0.9em;
+}
+
+/* line 343, ../sass/sass/style22.scss */
+#contact #valider {
+  background: url(../images/ascii_frise.png) #b6161b;
+  color: #eeeeee;
+  line-height: 30px;
+  padding: 10px 60px;
+  width: 57px;
+}
+
+/* line 344, ../sass/sass/style22.scss */
+#contact .formcolonne {
+  float: left;
+  width: 45%;
+}
+
+/* line 345, ../sass/sass/style22.scss */
+#contact #premiere {
+  margin-right: 5%;
+}
+
+/* line 346, ../sass/sass/style22.scss */
+.icon-mail:before {
+  content: "\e602";
+}
+
+/* line 348, ../sass/sass/style22.scss */
+footer {
+  background: url(../images/fond_menu.png) #150b07;
+  padding: 25px;
+}
+
+/* line 349, ../sass/sass/style22.scss */
+footer a {
+  display: inline;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  /* line 353, ../sass/sass/style22.scss */
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  /* line 354, ../sass/sass/style22.scss */
+  h2 {
+    font-size: 1em;
+    margin: 0 auto;
+    line-height: 1.2em;
+  }
+
+  /* line 355, ../sass/sass/style22.scss */
+  h3 {
+    font-size: 0.7em;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.4em;
+  }
+
+  /* line 356, ../sass/sass/style22.scss */
+  h4 {
+    font-size: 1.8em;
+  }
+
+  /* line 357, ../sass/sass/style22.scss */
+  p {
+    line-height: 1.3em;
+  }
+
+  /* line 358, ../sass/sass/style22.scss */
+  img {
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* line 360, ../sass/sass/style22.scss */
+  .titre_bloc {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  /* line 361, ../sass/sass/style22.scss */
+  .titre_bloc h1 {
+    line-height: 1em;
+  }
+
+  /**STYLE ACCUEIL*/
+  /* line 364, ../sass/sass/style22.scss */
+  #accueil {
+    height: 200px;
+    padding-top: 0px;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+  }
+
+  /* line 365, ../sass/sass/style22.scss */
+  #paratexte {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* line 366, ../sass/sass/style22.scss */
+  #paratexte img {
+    display: none;
+  }
+
+  /* line 367, ../sass/sass/style22.scss */
+  #paratexte p {
+    font-size: 1.2em;
+    margin: 60px auto 0;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+
+  /* line 368, ../sass/sass/style22.scss */
+  #paratexte h1 {
+    display: none;
+  }
+
+  /* line 369, ../sass/sass/style22.scss */
+  #paratexte #guillemet {
+    float: right;
+    margin-top: 10px;
+  }
+
+  /* line 370, ../sass/sass/style22.scss */
+  #haut {
+    position: relative;
+    line-height: 1.8em;
+  }
+
+  /* line 371, ../sass/sass/style22.scss */
+  #flechebas {
+    margin: 0;
+    display: block;
+    visibility: hidden;
+  }
+
+  /** MENU*/
+  /* line 374, ../sass/sass/style22.scss */
+  #mobnav {
+    position: relative;
+    display: block;
+    margin: 15px 3% 15px 20px;
+    width: 40px;
+    height: 40px;
+    background: url(../images/mobnav.png) no-repeat transparent;
+    float: left;
+  }
+
+  /* line 375, ../sass/sass/style22.scss */
+  #logo {
+    position: relative;
+    float: left;
+    line-height: 1.8em;
+    padding: 0;
+    left: auto;
+  }
+
+  /* line 376, ../sass/sass/style22.scss */
+  #nav {
+    float: none;
+    padding-left: 3%;
+    display: none;
+    clear: both;
+    position: absolute;
+    top: 70px;
+    z-index: 99;
+  }
+
+  /* line 377, ../sass/sass/style22.scss */
+  #nav li a:hover {
+    color: #d8cccc;
+  }
+
+  /* line 378, ../sass/sass/style22.scss */
+  #nav li a {
+    padding: 5px 30px 5px 10px;
+    color: #fff;
+  }
+
+  /* line 379, ../sass/sass/style22.scss */
+  #nav li {
+    float: none;
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    letter-spacing: 0;
+  }
+
+  /* line 380, ../sass/sass/style22.scss */
+  #nav li#drap {
+    display: none;
+  }
+
+  /* line 381, ../sass/sass/style22.scss */
+  #nav li#drap a {
+    display: none;
+  }
+
+  /**STYLE PROPOS**/
+  /* line 384, ../sass/sass/style22.scss */
+  #propos {
+    width: 100%;
+    overflow: hidden;
+    font-size: 0.8em;
+    padding-top: 0px;
+  }
+
+  /* line 385, ../sass/sass/style22.scss */
+  #propos h2 {
+    margin-top: 30px;
+  }
+
+  /* line 386, ../sass/sass/style22.scss */
+  #propos h3 {
+    width: 80%;
+  }
+
+  /* line 387, ../sass/sass/style22.scss */
+  #ensemble {
+    margin: 0 auto;
+    width: 95%;
+    padding: 10px 0px;
+    width: 95%;
+  }
+
+  /* line 388, ../sass/sass/style22.scss */
+  #competence {
+    clear: both;
+    margin: 0px auto;
+    width: 90%;
+    padding: 30px 0;
+  }
+
+  /* line 389, ../sass/sass/style22.scss */
+  #comptitre {
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  /* line 390, ../sass/sass/style22.scss */
+  #comptitre span {
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* line 391, ../sass/sass/style22.scss */
+  #competence h2 {
+    font-size: 2em;
+    margin: 40px 0;
+  }
+
+  /* line 392, ../sass/sass/style22.scss */
+  #competence span {
+    width: 100%;
+    font-size: 1em;
+    line-height: 6em;
+    display: inline-block;
+  }
+
+  /* line 393, ../sass/sass/style22.scss */
+  .competence {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 394, ../sass/sass/style22.scss */
+  .competence p {
+    margin: 10px auto;
+  }
+
+  /* line 395, ../sass/sass/style22.scss */
+  .competence img {
+    padding: 25px 95px;
+  }
+
+  /* line 396, ../sass/sass/style22.scss */
+  .competence h5 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  /* line 397, ../sass/sass/style22.scss */
+  .competence .vignette {
+    padding: 20px 0px;
+    font-size: 80px;
+    width: 80%;
+  }
+
+  /* line 399, ../sass/sass/style22.scss */
+  #propos h1, #contact h1 {
+    display: inline;
+    line-height: 2em;
+    text-align: center;
+  }
+
+  /* line 401, ../sass/sass/style22.scss */
+  #porto_bottom {
+    height: auto;
+    margin-left: 0;
+  }
+
+  /* line 403, ../sass/sass/style22.scss */
+  #profil img {
+    width: 100%;
+    float: none;
+    box-shadow: -5px 4px 4px #999999;
+    margin-top: 0px;
+  }
+
+  /* line 404, ../sass/sass/style22.scss */
+  .aprop {
+    width: 100%;
+    float: none;
+    margin-top: 0px;
+  }
+
+  /* line 407, ../sass/sass/style22.scss */
+  .onglet {
+    float: left;
+    height: 200px;
+  }
+
+  /* line 408, ../sass/sass/style22.scss */
+  .onglet .titre_comp {
+    float: left;
+    background-color: #eeeeee;
+    height: 200px;
+    border-right: 3px solid #fff;
+    cursor: pointer;
+    width: 40px;
+    word-wrap: break-word;
+  }
+
+  /* line 410, ../sass/sass/style22.scss */
+  .onglet .actif {
+    background-color: #fff;
+  }
+
+  /* line 411, ../sass/sass/style22.scss */
+  .onglet .contenu {
+    float: left;
+    width: 500px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  /**STYLE PORTO**/
+  /* line 413, ../sass/sass/style22.scss */
+  #oiseaux {
+    margin-top: 30px;
+  }
+
+  /* line 414, ../sass/sass/style22.scss */
+  #travaux {
+    display: block;
+    padding: 50px 0 0;
+  }
+
+  /* line 415, ../sass/sass/style22.scss */
+  #travaux .cadre_ascii {
+    padding-top: 15px;
+  }
+
+  /* line 417, ../sass/sass/style22.scss */
+  #travaux h3 {
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* line 418, ../sass/sass/style22.scss */
+  .travail {
+    padding: 0;
+  }
+
+  /* line 419, ../sass/sass/style22.scss */
+  .travail img {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* line 420, ../sass/sass/style22.scss */
+  .topo {
+    font-size: 0.8em;
+    padding: 10px 5%;
+    margin-left: 10px;
+    height: auto;
+    width: 70%;
+  }
+
+  /* line 421, ../sass/sass/style22.scss */
+  .topo a {
+    text-align: center;
+    display: inline-block;
+    font-size: 1.1em;
+  }
+
+  /* display:block; margin:0 auto;}*/
+  /* line 422, ../sass/sass/style22.scss */
+  .travail .bord_img {
+    margin: 5px 0 0;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* line 424, ../sass/sass/style22.scss */
+  #porto {
+    padding-top: 70px;
+  }
+
+  /* line 425, ../sass/sass/style22.scss */
+  #porto h1 {
+    display: inline;
+    line-height: 100px;
+    padding-top: 10px;
+  }
+
+  /**STYLE CONTACT*/
+  /* line 429, ../sass/sass/style22.scss */
+  #contact {
+    padding: 70px 0;
+  }
+
+  /* line 431, ../sass/sass/style22.scss */
+  #coord {
+    margin: 60px auto;
+  }
+
+  /* line 432, ../sass/sass/style22.scss */
+  #coord #infocontact img {
+    padding: 0 5px;
+  }
+
+  /* line 433, ../sass/sass/style22.scss */
+  #coord #infocontact a {
+    padding-bottom: 5px;
+  }
+
+  /* line 434, ../sass/sass/style22.scss */
+  #contact form {
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  /* line 435, ../sass/sass/style22.scss */
+  #contact .formcolonne {
+    width: 100%;
+  }
+
+  /* line 436, ../sass/sass/style22.scss */
+  #contact #premiere {
+    height: auto;
+  }
+
+  /* line 437, ../sass/sass/style22.scss */
+  #contact form input, #contact form #message {
+    width: 100%;
+    font-size: 1.1em;
+    margin: 5px auto;
+    padding: 20px 0px;
+  }
+
+  /* line 438, ../sass/sass/style22.scss */
+  #contact form div p {
+    font-size: 0.9em;
+  }
+
+  /* line 439, ../sass/sass/style22.scss */
+  #contact form span.messerreur {
+    font-size: 0.8em;
+  }
+
+  /* line 440, ../sass/sass/style22.scss */
+  #contact form label {
+    padding-left: 10px;
+    font-size: 0.9em;
+  }
+
+  /* line 441, ../sass/sass/style22.scss */
+  #contact #valider {
+    padding: 10px 50px;
+    width: 50px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+@media (min-width: 640px) and (max-width: 740px) {
+  /* line 446, ../sass/sass/style22.scss */
+  #logo {
+    position: relative;
+    float: left;
+    line-height: 0;
+    width: 200px;
+  }
+
+  /* line 447, ../sass/sass/style22.scss */
+  #nav li {
+    margin: 0px 0px 0px 15px;
+  }
+
+  /* line 448, ../sass/sass/style22.scss */
+  #nav li#drap {
+    padding: 15px 0px;
+    display: block;
+    line-height: 0;
+    width: 40px;
+  }
+
+  /* line 449, ../sass/sass/style22.scss */
+  #comptitre span {
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* line 450, ../sass/sass/style22.scss */
+  #competence h2 {
+    font-size: 2em;
+    margin: 40px 0;
+  }
+
+  /**STYLE CONTACT*/
+  /* line 452, ../sass/sass/style22.scss */
+  #contact {
+    padding: 70px 0;
+  }
+
+  /* line 454, ../sass/sass/style22.scss */
+  #coord {
+    margin: 60px auto;
+  }
+
+  /* line 455, ../sass/sass/style22.scss */
+  #coord #infocontact img {
+    padding: 0 5px;
+  }
+
+  /* line 456, ../sass/sass/style22.scss */
+  #coord #infocontact a {
+    padding-bottom: 5px;
+  }
+
+  /* line 457, ../sass/sass/style22.scss */
+  #contact form {
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  /* line 458, ../sass/sass/style22.scss */
+  #contact .formcolonne {
+    width: 100%;
+  }
+
+  /* line 459, ../sass/sass/style22.scss */
+  #contact #premiere {
+    height: auto;
+  }
+
+  /* line 460, ../sass/sass/style22.scss */
+  #contact form input, #contact form #message {
+    width: 100%;
+    font-size: 1.1em;
+    margin: 5px auto;
+    padding: 20px 0px;
+  }
+
+  /* line 461, ../sass/sass/style22.scss */
+  #contact form div p {
+    font-size: 0.9em;
+  }
+
+  /* line 462, ../sass/sass/style22.scss */
+  #contact form span.messerreur {
+    font-size: 0.8em;
+  }
+
+  /* line 463, ../sass/sass/style22.scss */
+  #contact form label {
+    padding-left: 10px;
+    font-size: 0.9em;
+  }
+
+  /* line 464, ../sass/sass/style22.scss */
+  #contact #valider {
+    padding: 10px 50px;
+    width: 50px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+@media (max-width: 1200px) {
+  /* line 469, ../sass/sass/style22.scss */
+  .open-slider,
+  .fader,
+  .diapactif {
+    display: none !important;
+  }
+
+  /* line 474, ../sass/sass/style22.scss */
+  .wrap__slider .slider .topo {
+    width: 40%;
+  }
+
+  /* line 477, ../sass/sass/style22.scss */
+  .wrap__slider .slider .item img {
+    width: 60%;
+  }
+}
+@media (max-width: 800px) {
+  /* line 482, ../sass/sass/style22.scss */
+  .wrap__slider .slider .topo,
+  .wrap__slider .slider .item img {
+    width: 100%;
+    position: relative;
+  }
 }
