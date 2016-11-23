@@ -97,10 +97,15 @@ $competenceVign3['en'] = "	<h5>Heard about you</h5>
 
 
 // Portfolio
-$portoFullWebsite['fr'] = "Full website";
+$portoFullWebsite['fr'] = "Site complet";
 $portoUpdateStyle['fr'] = "Rafraichissement du style et mise en page";
-$portoHorsLigne['fr'] = "Site no longer live";
+$portoHorsLigne['fr'] = "Site plus en ligne.";
 $portoProjet['fr'] = "Projet";
+
+$portoFullWebsite['en'] = "Full website";
+$portoUpdateStyle['en'] = "Style update";
+$portoHorsLigne['en'] = "Site no longer live";
+$portoProjet['en'] = "Project";
 
 $portoMisBoutic['fr'] = "
                     <li>> -  Construction du site avec Magento. </li>
