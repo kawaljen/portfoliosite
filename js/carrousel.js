@@ -239,17 +239,20 @@
    function __addingListeners () {
 
      self.priv.$prevButton.click(function(){
-       __StopAutoplay ();
-       self.priv.currentIndex--;
-       __goTo();
-       __StartAutoplay ();
+       isLeft=true;
+       goThere(isLeft);
      });
-
+     self.priv.$wrapper.on("swipeleft",function(){
+       isLeft=true;
+       goThere(isLeft);
+     });
      self.priv.$nextButton.click(function(){
-       __StopAutoplay ();
-       self.priv.currentIndex++;
-       __goTo();
-       __StartAutoplay ();
+       isLeft=false;
+       goThere(isLeft);
+     });
+     self.priv.$wrapper.on("swiperight",function(){
+       isLeft=false;
+       goThere(isLeft);
      });
 
      self.priv.$slideNav.click(function(){
@@ -261,22 +264,29 @@
       //      self.priv['callBackSeekedFunction'].call(this);
       //  }
      });
-     $('.icon-pause').click(function(){
-       __StopAutoplay ();
-     });
 
-     $('.icon-play').click(function(){
-       __StartAutoplay ();
+     $('#slider--trigger').click(function(){
+       if($(this).hasClass('play')){
+         $(this).attr('class', 'pause');
+         __StartAutoplay ();
+       }
+       else {
+         $(this).attr('class', 'play');
+         __StopAutoplay ();
+       }
      });
+   }
+
+   function goThere(isLeft){
+     __StopAutoplay ();
+     __goTo(isLeft);
+     __StartAutoplay ();
    }
 
     function __setStyles () {
       __load();
       __resetButtons();
       __updatePositionMarker();
-      if( self.priv.currentIndex +1 >=  self.priv.slidesLength ){
-         self.priv.currentIndex = 0;
-      }
     };
 
     /**
@@ -288,9 +298,7 @@
 
     function __StartAutoplay () {
         self.priv.autoPTimeout = setInterval(function(){
-
-          self.priv.currentIndex++;
-          __goTo();
+          __goTo(false);
 
         }.bind(self), 7000);
     };
@@ -341,12 +349,26 @@
       Go to
       @private
       @method __goTo
+      @param {array} isleft (is going to the left?)
       @return {null}
     **/
-    function __goTo () {
+    function __goTo (isLeft) {
         // __load(self.priv.currentIndex + 1);
         // self.priv.$slideNav.css('transform', 'scale(0.93)');
         // setTimeout(function(){
+          if(typeof isLeft != 'undefined'){
+            if(isLeft){
+              self.priv.currentIndex--;
+            }
+            else{
+              if(self.priv.currentIndex >= self.priv.slidesLength-1){
+                self.priv.currentIndex = 0;
+              }
+              else {
+                 self.priv.currentIndex++;
+              }
+            }
+          }
 
           self.priv.$wrapper.css('transform', 'translate3d('+(-self.priv.currentIndex * (100/ self.priv.slidesLength)) +'%, 0, 0px)');
           // self.priv.$wrapperSecond.css('transform', 'scale(1)');

@@ -1,0 +1,81 @@
+$height:30px;
+$width:4px;
+
+.stop,
+.play,
+.pause{
+  width:$height;
+  height:$height;
+  margin:$height/3 $height/2;
+  position:relative;
+  transition:.2s;
+  cursor: pointer;
+}
+
+.elm{
+  border-radius:$width / 2;
+  background:#fff;
+  transition:.2s;
+  position:absolute;
+}
+
+.top{
+  width:$height;
+  height:$width;
+  top:0;
+  left:0;
+}
+
+.right{
+  width:$width;
+  height:$height;
+  top:0;
+  left:$height - $width;
+}
+
+.bottom{
+  width:$height;
+  height:$width;
+  top:$height - $width;
+  left:0;
+}
+
+.left{
+  width:$width;
+  height:$height;
+  top:0;
+  left:0;
+}
+
+.play{
+  transform:rotate(-90deg);
+  .top{
+  }
+  .right{
+    transform-origin:center top;
+    transform:rotate(29deg) translate($width/4, $width/8) scaleY(1);
+  }
+  .bottom{
+    display:none;
+  }
+  .left{
+    transform-origin:center top;
+    transform:rotate(-29deg) translate(-$width/4, $width/8) scaleY(1);
+  }
+}
+
+.pause{
+  transform:rotate(180deg);
+  .top{
+    opacity:0;
+  }
+  .right{
+    transform:translateX(-$width) scaleY(.8);
+  }
+  .bottom{
+    opacity:0;
+  }
+  .left{
+    transform:translateX($width) scaleY(.8);
+  }
+}

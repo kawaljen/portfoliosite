@@ -2,8 +2,12 @@
     <div class="wrap__slider">
 
         <div class="topo-menu">
-            <span class="icon-pause"></span>
-            <span class="icon-minimise icon-play"></span>
+					<div id="slider--trigger" class="pause">
+					  <div class="elm top"></div>
+					  <div class="elm right"></div>
+					  <div class="elm bottom"></div>
+					  <div class="elm left"></div>
+					</div>
         </div>
         <div class="navigation__list"></div>
         <div class="nav-buttons">
@@ -15,7 +19,7 @@
 
            <div id="slider0" class="slide slide-secondaire">
           		<div class="item">
-          			<img src="porto/empty.png" alt="Made In Shoreditch Boutique" data-src="MIS.png" >
+          			<img src="porto/empty.png" alt="Made In Shoreditch Boutique" data-src="MISbtq.png" >
                 <!-- <a class="item" href="porto/MIS-shop-view2.jpg">
                 <img src="porto/MIS-shop-view2.jpg" alt="Made In Shoreditch Boutique " width="1049" height="634">
                 </a>
@@ -118,7 +122,7 @@
         						<h3>Florist</h3>
         						<h4><?php echo $portoProjet[$lg]; ?></h4>
         				</div>
-        				<?php echo $portoFleuriste[$lg]; ?> 
+        				<?php echo $portoFleuriste[$lg]; ?>
       		  </div>
         </div>
         <!-- <div class="slide">

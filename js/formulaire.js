@@ -2,46 +2,46 @@
 	var formulR= document.getElementById('formulR'),
 	    formvalue=new Array(),
 	    spanVise ;
-	
-	for(var i=0; i<formulR.length; i++)
-	  {	  formvalue[i]=formulR[i].value;
-			formulR[i].addEventListener('focus', function() {																		
+
+	for(var i=0; i<formulR.length; i++){
+		  formvalue[i]=formulR[i].value;
+			formulR[i].addEventListener('focus', function() {
 																if(this.value=="Nom" || this.value=="Email" ||this.value=="Message" ||this.value=="Sujet" ||this.value=="Subject" ||this.value=="Name")
-																	{formvalue[i]=this.value; this.value =" "; } 
+																	{formvalue[i]=this.value; this.value =" "; }
 																this.style.color='#000000' }
 																, true);
-			  
-		}
-	for(var i=0; i<formulR.length; i++)
-	  {			formulR[i].addEventListener('blur', function() { 
+
+	}
+	for(var i=0; i<formulR.length; i++){
+					formulR[i].addEventListener('blur', function() {
 																	if(this.value===" ")
-																		{this.value=formvalue[i]; this.style.color='#808080'}	
+																		{this.value=formvalue[i]; this.style.color='#808080'}
 																}, true);
-			}
+	}
 	formulR.addEventListener('submit', function(e) {	offMessErreur(formulR);
 														for(var i=0; i<formulR.length; i++)
-															{	
-																if(formulR[i].name != 'sujet')
+															{
+																if(formulR[i].className === "validation" )
 																	{	if(formulR[i].type==='textarea') {var nb=10;}
 																		else {var nb=5;}
 																		if (formulR[i].value === formvalue[i] || formulR[i].value.length<nb )
-																			{ 	
+																			{
 																				if(formulR[i].name==='email'){
 																					if(!Verifmail(formulR[i].value)){
 																						taille(formulR[i], nb);
 																						e.preventDefault();
-																						}						
-																					}												
+																						}
+																					}
 																				else {taille(formulR[i], nb);
 																				 e.preventDefault();}
 																			}
-																	}													
+																	}
 															}
-													}, true);
+	}, true);
 	formulR.addEventListener('reset', function() {	for(var i=0; i<formulR.length; i++)
-														{formulR[i].style.color='#808080';} 
-													offMessErreur(formulR); 
-													}, true);
+														{formulR[i].style.color='#808080';}
+													offMessErreur(formulR);
+	}, true);
 
 
 //**************************** AFFICHAGE DES SPANs INFOs *****************************/
@@ -53,16 +53,16 @@
 					spans[i].style.visibility = 'hidden';
 				}
 			}
-		
+
     }
-     
+
 function getMesErreur(element) {
         while (element = element.previousSibling) {
             if (element.className === 'messerreur') {
                 return element;
             }
-        }  
-        return false; 
+        }
+        return false;
     }
 
 //**************************** mail *****************************/

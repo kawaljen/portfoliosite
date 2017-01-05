@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-
+    pkg: grunt.file.readJSON('package.json'),
 
     cssmin: {
       options: {
@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          './css/style22.min.css': ['./css/style22.css']
+          './css/style.min.css': ['./css/style.css']
         }
       }
     },
@@ -25,16 +25,16 @@ module.exports = function(grunt) {
     sass: {
 			dist: {
 				files: {
-					'./css/style22.css' : './css/style22.scss'
+					'css/style.css' : 'css/sass/style.scss'
 				}
 			}
 		},
-    watch: {
-      css: {
-        files: './css/style22.scss',
-        tasks: ['sass']
-      },
-    },
+		watch: {
+			css: {
+				files: 'css/sass/*.scss',
+				tasks: ['sass']
+			}
+		}
 
   });
 
@@ -50,5 +50,5 @@ module.exports = function(grunt) {
 										 'uglify',
 									   ]);
 
-  grunt.registerTask('sass',['watch']);
+  grunt.registerTask('default',['watch']);
 };

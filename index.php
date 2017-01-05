@@ -6,7 +6,7 @@ include('contenu.php');
 
 //-------------------------------------------------------LANGAGE----------------------------------------------------------------
 $http_lang = substr(Get_Client_Prefered_Language(),0,2);
-if($http_lang !== 'en' && $_GET['lg']!=='en')
+if($http_lang !== 'en' && (isset($_GET['lg']) && $_GET['lg']!=='en'))
 	$lg = 'fr';
 //---------------------------------------------------------MAIL-----------------------------------------------------------------
 if(!empty($_POST))
@@ -30,8 +30,9 @@ if(!empty($_POST))
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js">')</script>
-
-	<link rel="stylesheet" type="text/css" href="css/style22.min.css" />
+<!--
+	<link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" />
 
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 
@@ -206,15 +207,15 @@ if(!empty($_POST))
 						<div class="formcolonne" id="premiere">
 
 								<span class="messerreur"><?php echo $contactMessageNom[$lg]; ?></span>
-							<input type="text" id="nom" <?php if(!empty($_POST['nom'])) echo 'value='.$_POST['nom']; else echo 'value="'.$contactInputNom[$lg].'"';?> name="nom" size="45" />
+							<input type="text" class="validation" id="nom" <?php if(!empty($_POST['nom'])) echo 'value='.$_POST['nom']; else echo 'value="'.$contactInputNom[$lg].'"';?> name="nom" size="45" />
 								<span class="messerreur"><?php echo $contactMessageEmail[$lg]; ?></span>
-							<input type="email" id="email" <?php if(!empty($_POST['email'])) echo 'value='.$_POST['email']; else echo 'value="Email"';?> name="email" size="45"/>
+							<input type="email" class="validation" id="email" <?php if(!empty($_POST['email'])) echo 'value='.$_POST['email']; else echo 'value="Email"';?> name="email" size="45"/>
 								<span class="messerreur">.</span>
 							<input type="text" <?php if(!empty($_POST['sujet'])) echo 'value='.$_POST['sujet']; else echo 'value="'.$contactInputSujet[$lg].'"';?> name="sujet" id="sujet" size="45"/>
 						</div>
 						<div class="formcolonne">
 								<span class="messerreur"><?php echo $contactMessageTextarea[$lg]; ?></span>
-							<textarea id="message" name="message"><?php if(!empty($_POST['message'])) echo $_POST['message']; else echo 'Message';?></textarea>
+							<textarea id="message" class="validation" name="message"><?php if(!empty($_POST['message'])) echo $_POST['message']; else echo 'Message';?></textarea>
 							<input type="hidden" name="lg" value ="<?php echo $lg; ?>" />
 							<input type="image" src="images/icones/lettre.png" id="valider" alt="valider"/>
 						</div>
@@ -232,5 +233,8 @@ if(!empty($_POST))
 <a href="mentionsleg.php">Mentions légales</a>
 </footer>
 <script src="js/funct.min.js" async> </script>
+<!-- <script src="js/formulaire.js" async> </script>
+<script src="js/carrousel.js" async> </script> -->
+
 </body>
 </html>
