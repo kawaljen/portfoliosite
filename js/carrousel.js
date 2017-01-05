@@ -256,10 +256,17 @@
      });
 
      self.priv.$slideNav.click(function(){
-       __StopAutoplay ();
-       self.priv.currentIndex = $(this).index();
-       __goTo();
-       __StartAutoplay ();
+       if(self.priv.autoPTimeout){
+         __StopAutoplay ();
+         self.priv.currentIndex = $(this).index();
+         __goTo();
+         __StartAutoplay ();
+       }
+       else {
+         self.priv.currentIndex = $(this).index();
+         __goTo();       
+       }
+
       //  if(self.priv['callBackSeekedFunction'] != null) {
       //      self.priv['callBackSeekedFunction'].call(this);
       //  }
@@ -278,9 +285,14 @@
    }
 
    function goThere(isLeft){
-     __StopAutoplay ();
-     __goTo(isLeft);
-     __StartAutoplay ();
+     if(!self.priv.autoPTimeout){
+       __goTo(isLeft);
+     }
+     else{
+       __StopAutoplay ();
+       __goTo(isLeft);
+       __StartAutoplay ();
+     }
    }
 
     function __setStyles () {
@@ -299,7 +311,6 @@
     function __StartAutoplay () {
         self.priv.autoPTimeout = setInterval(function(){
           __goTo(false);
-
         }.bind(self), 7000);
     };
 
@@ -312,6 +323,7 @@
 
     function __StopAutoplay () {
         clearInterval(self.priv.autoPTimeout);
+        self.priv.autoPTimeout = 0;
     };
 
     /**
